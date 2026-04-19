@@ -5,7 +5,6 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 )
 
 func TestCompress(t *testing.T) {
@@ -112,7 +111,6 @@ func TestWriteBits(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got := writeBits(tt.text, tt.codes)
 
-			require.Equal(t, len(tt.expectedBits), len(got), "writeBits() did not return same lengths")
 			assert.Equal(t, tt.expectedBits, got, "writeBits not returned same slice of bits")
 		})
 	}
